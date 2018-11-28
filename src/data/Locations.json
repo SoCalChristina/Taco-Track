@@ -19,7 +19,7 @@
     "state": "CA",
     "zip": "93030",
     "url": "https://www.facebook.com/pages/Tacos-Arandas/134869146568848",
-    "pos": {"lat":34.202570,"lon":-119.177650},
+    "pos": {"lat":34.202570,"lng":-119.177650},
     "formattedAddress": [
                  "136 W 1st St ",
                  "Oxnard, CA 93030"
