@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+}
+
+/* source for vmin and vmax: http://thenewcode.com/1137/MinMaxing-Understanding-vMin-and-vMax-in-CSS */
+.app-header {
+  background-color: #5AAAE7;
+  min-height: 12vmax;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 0.5vmin);
+  color: white;
+  padding: 1vh;
+  width: 100%;
+}
+
+h1 {
+  background-color: #5AAAE7;
+  font-family: 'Unlock', cursive;
+  /*font-size: 10vmin;*/
+  text-align: center;
+  margin: 0;
+  color: #fff;
+  letter-spacing: 0.5vmin;
+}
+
+.app-logo {
+  width: 80px;
+  background: #5AAAE7;
+  animation-name: slidein, shake;
+  animation-duration: 2000ms, 500ms;
+  animation-iteration-count: 1, 2;
+  animation-delay: 500ms, 2500ms;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+/* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations */
+
+@keyframes slidein {
+  /* for chrome and safari*/
+           -webkit-animation-duration: 3s;
+           -webkit-animation-name: slidein;
+
+           /*for firefox*/
+           -moz-animation-duration: 3s;
+           -moz-animation-name: slidein;
+
+             /* for opera*/
+           -o-animation-duration: 3s;
+           -o-animation-name: slidein;
+
+             /* Standard syntax*/
+           animation-duration: 3s;
+           animation-name: slidein;
+       }
+
+       @-webkit-keyframes slidein {
+           from {
+               margin-left: 100%;
+               width: 12%;
+           }
+
+           to {
+               margin-left: 0%;
+               width: 13%;
+           }
+       }
+
+       @-moz-keyframes slidein {
+           from {
+               margin-left: 100%;
+               width: 12%;
+           }
+
+           to {
+               margin-left: 0%;
+               width: 13%;
+           }
+       }
+        @-o-keyframes slidein {
+           from {
+               margin-left: 100%;
+               width: 12%;
+           }
+
+           to {
+               margin-left: 0%;
+               width: 13%;
+           }
+       }
+         @keyframes slidein {
+           from {
+               margin-left: 100%;
+               width: 12%;
+           }
+
+           to {
+               margin-left: 0%;
+               width: 13%;
+           }
+       }
+       @keyframes shake {
+           0% { transform: translate(1px, 1px) rotate(0deg); }
+           10% { transform: translate(-1px, -2px) rotate(-1deg); }
+           20% { transform: translate(-3px, 0px) rotate(1deg); }
+           30% { transform: translate(3px, 2px) rotate(0deg); }
+           40% { transform: translate(1px, -1px) rotate(1deg); }
+           50% { transform: translate(-1px, 2px) rotate(-1deg); }
+           60% { transform: translate(-3px, 1px) rotate(0deg); }
+           70% { transform: translate(3px, 1px) rotate(-1deg); }
+           80% { transform: translate(-1px, -1px) rotate(1deg); }
+           90% { transform: translate(1px, 2px) rotate(0deg); }
+           100% { transform: translate(1px, -2px) rotate(-1deg); }
+       }
