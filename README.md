@@ -16,7 +16,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Getting Started:
 ### `Clone or fork repository.`
-(https://github.com/SoCalChristina/react-neighborhood-map)
+(https://github.com/SoCalChristina/react-neighborhood-map-resubmit)
 
 ### `npm install`
 
