@@ -49,10 +49,6 @@ See: (https://facebook.github.io/create-react-app/docs/making-a-progressive-web-
 (https://cloud.google.com/maps-platform/)
 * Google Maps React (https://github.com/fullstackreact/google-maps-react)
 * @material-ui/core (https://www.npmjs.com/package/@material-ui/core)
-"react-dom": "^16.6.3",
-"react-router-dom": "^4.3.1",
-"react-scripts": "2.1.1"
-
 * Font Awesome
 (https://fontawesome.com/)
 * FourSquare Developers Places API data (https://developer.foursquare.com/places-api),
