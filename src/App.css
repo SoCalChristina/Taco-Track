@@ -26,7 +26,7 @@ h1 {
   letter-spacing: 0.5vmin;
 }
 
-.app-logo {
+.App-logo {
   width: 80px;
   background: #5AAAE7;
   animation-name: slidein, shake;

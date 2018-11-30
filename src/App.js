@@ -79,10 +79,8 @@ class App extends Component {
                           <i className="fa fa-bars"></i>
                       </button>
                       <h1>Oxnard Taco Track</h1>
-                      <img src={logo} className="app-logo" alt={"taco truck logo"} />
-
+                      <img src={logo} className="App-logo" alt={"taco truck logo"}/>
                   </div>
-
                   <MapDisplay
                       lat={this.state.lat}
                       lon={this.state.lon}

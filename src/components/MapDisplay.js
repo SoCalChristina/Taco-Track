@@ -3,7 +3,7 @@ import {Map, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
 import ErrorAlert from './ErrorAlert';
 //Tutorial source: https://www.youtube.com/watch?v=NVAVLCJwAAo&feature=youtu.be
 //declare map api as a constant with API keys
-const MAP_KEY = 'AIzaSyBVMw1jhal8PJLsikGso7YOp-qqDHATDC4'; //use with GoogleApiWrapper component
+const MAP_KEY = 'xyzAIzaSyBVMw1jhal8PJLsikGso7YOp-qqDHATDC4'; //use with GoogleApiWrapper component
 const FS_CLIENT = 'CXKH1EGY1G5CKFK1I2OTHS4GKIFMSRN3FLSLPH5QNBP3YWV3';
 const FS_SECRET = 'EEFMX2QAOHSKBC0MGMDIBHIYDUP4M50PVMXB1LDVD0XEPGGS';
 const FS_VERSION = "20181101";
@@ -107,26 +107,31 @@ class MapDisplay extends Component {
                     // use foursquare photo api
                     let url = `https://api.foursquare.com/v2/venues/${restaurant[0].id}/photos?client_id=${FS_CLIENT}&client_secret=${FS_SECRET}&v=${FS_VERSION}`;
                     fetch(url)
-                        .then(response => response.json())
-                        .then(result => {
-                            activeMarkerProps = {
-                                ...activeMarkerProps,
-                                //images uses photos properties results
-                                images: result.response.photos
-                        };
-                        if (this.state.activeMarker)
-                            this.state.activeMarker.setAnimation(null);
-                            marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
-                            this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps});
-                        })
-                    } else {
-                    marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
-                    this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps});
-                }
-            })
-        }
+                    .then(response => response.json())
+                    .then(result => {
+                        activeMarkerProps = {
+                            ...activeMarkerProps,
+                            //images uses photos properties results
+                            images: result.response.photos
+                    };
+                    if (this.state.activeMarker)
+                        this.state.activeMarker.setAnimation(null);
+                        marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
+                        this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps});
+                    })
+                    .catch((error) => {
+                        alert("Sorry, no data received. Please check your internet connection")
+                    })
+                        } else {
+                        marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
+                        this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps});
+                        }
+        })
+        .catch((error) => {
+            alert("Sorry, no data was received. Please check your internet connection")
+        })
 
-
+    }
     updateMarkers = (Locations) => {
         // finished after all Locations filtered
         if (!Locations)
