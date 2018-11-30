@@ -196,6 +196,7 @@ class MapDisplay extends Component {
             <Map
                 role="application"
                 aria-label="map"
+                tabIndex="-1"
                 onReady={this.mapReady}
                 google={this.props.google}
                 zoom={this.props.zoom}

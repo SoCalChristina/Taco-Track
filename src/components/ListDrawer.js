@@ -21,7 +21,8 @@ class ListDrawer extends Component {
             width: 'auto'
         },
         listItem: {
-            marginBottom: "15px"
+            marginBottom: "15px",
+            tabIndex: "0"
         },
         listLink: {
             background: "transparent",
@@ -62,8 +63,8 @@ class ListDrawer extends Component {
                                 .Locations
                                 .map((location, index) => {
                                     return (
-                                        <li style={this.styles.listItem} key={index}>
-                                            <button style={this.styles.listLink} key={index} onClick={e => this.props.clickListItem(index)}>{location.name}</button>
+                                        <li style={this.styles.listItem} key={index} tabindex={0}>
+                                            <button style={this.styles.listLink} key={index} tabIndex={0} onClick={e => this.props.clickListItem(index)}>{location.name}</button>
                                         </li>
                                     )
                                 })}
