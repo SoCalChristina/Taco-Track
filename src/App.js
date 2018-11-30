@@ -43,7 +43,12 @@ class App extends Component {
           filtered: this.filterLocations(this.state.all, "")
         });
       }
-
+      window.gm_authFailure = () => {
+        alert("We're sorry. Google Map is not available. Please try again later")
+      );
+    };
+    this.locales();
+  }
       toggleDrawer = () => {
         // Toggle the value controlling whether the drawer is displayed//
           this.setState({

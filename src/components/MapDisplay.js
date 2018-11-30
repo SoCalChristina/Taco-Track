@@ -56,6 +56,10 @@ class MapDisplay extends Component {
         this.setState({map});
         this.updateMarkers(this.props.Locations);
     }
+    .catch(error =>) {
+      alert("error:" + error)
+    })
+  };
 
     closeInfoWindow = () => {
         // Disable currently active animation on markers

@@ -64,7 +64,7 @@ class ListDrawer extends Component {
                                 .map((location, index) => {
                                     return (
                                         <li style={this.styles.listItem} key={index} tabindex={0}>
-                                            <button style={this.styles.listLink} key={index} tabIndex={0} onClick={e => this.props.clickListItem(index)}>{location.name}</button>
+                                            <button style={this.styles.listLink} name="location-selection" key={index} tabIndex={0} onClick={e => this.props.clickListItem(index)}>{location.name}</button>
                                         </li>
                                     )
                                 })}
