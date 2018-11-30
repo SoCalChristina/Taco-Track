@@ -42,12 +42,9 @@ class App extends Component {
           ...this.state,
           filtered: this.filterLocations(this.state.all, "")
         });
+        window.gm_authFailure = () => {
+           alert("We're sorry. Google Map is not available. Please try again later")
       }
-      window.gm_authFailure = () => {
-        alert("We're sorry. Google Map is not available. Please try again later")
-      );
-    };
-    this.locales();
   }
       toggleDrawer = () => {
         // Toggle the value controlling whether the drawer is displayed//
@@ -79,8 +76,8 @@ class App extends Component {
           return (
               <div className="App">
                   {/*TODO create and install components for menu button, header, map display, and footer.*/}
-                  <div className="header">
-                      <button onClick={this.toggleDrawer} style={this.styles.menuButton}>
+                  <div className="header" tabIndex="0">
+                  <button onClick={this.toggleDrawer} style={this.styles.menuButton} tabIndex="0">
                           <i className="fa fa-bars"></i>
                       </button>
                       <h1>Oxnard Taco Track</h1>

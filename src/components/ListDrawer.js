@@ -22,7 +22,7 @@ class ListDrawer extends Component {
         },
         listItem: {
             marginBottom: "15px",
-            tabIndex: "0"
+
         },
         listLink: {
             background: "transparent",
@@ -52,19 +52,20 @@ class ListDrawer extends Component {
                         <input
                             style={this.styles.filterEntry}
                             type="text"
+                            tabIndex="0"
                             placeholder="Filter list"
-                            name="filter"
+                            name="Search Input"
                             onChange={e => this
                             .updateQuery(e.target.value)}
                             value={this.state.query} />
-                        <ul style={this.styles.noBullets}>
+                        <ul style={this.styles.noBullets} role="list" tabIndex="0">
                             {this.props.Locations && this
                                 .props
                                 .Locations
                                 .map((location, index) => {
                                     return (
-                                        <li style={this.styles.listItem} key={index} tabindex={0}>
-                                            <button style={this.styles.listLink} name="location-selection" key={index} tabIndex={0} onClick={e => this.props.clickListItem(index)}>{location.name}</button>
+                                        <li style={this.styles.listItem} key={index}>
+                                            <button style={this.styles.listLink} tabIndex="0" role="link" name="location-selection" key={index} onClick={e => this.props.clickListItem(index)}>{location.name}</button>
                                         </li>
                                     )
                                 })}

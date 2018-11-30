@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Map, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
-import ErrorAlert from './ErrorAlert';
+//import ErrorAlert from './ErrorAlert';
 //Tutorial source: https://www.youtube.com/watch?v=NVAVLCJwAAo&feature=youtu.be
 //declare map api as a constant with API keys
 const MAP_KEY = 'AIzaSyBVMw1jhal8PJLsikGso7YOp-qqDHATDC4'; //use with GoogleApiWrapper component
@@ -56,10 +56,6 @@ class MapDisplay extends Component {
         this.setState({map});
         this.updateMarkers(this.props.Locations);
     }
-    .catch(error =>) {
-      alert("error:" + error)
-    })
-  };
 
     closeInfoWindow = () => {
         // Disable currently active animation on markers
@@ -90,7 +86,7 @@ class MapDisplay extends Component {
         let headers = new Headers();
         let request = new Request(url, {
             method: 'GET',
-                headers
+            headers
         });
 
         // fetch props for active marker
@@ -126,13 +122,13 @@ class MapDisplay extends Component {
                     .catch((error) => {
                         alert("Sorry, no data received. Please check your internet connection")
                     })
-                        } else {
-                        marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
-                        this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps});
-                        }
+            } else {
+                marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
+                this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps});
+            }
         })
         .catch((error) => {
-            alert("Sorry, no data was received. Please check your internet connection")
+          alert("Sorry, no data was received. Please check your internet connection")
         })
 
     }
@@ -186,7 +182,7 @@ class MapDisplay extends Component {
     render = () => {
         const style = {
             width: '100%',
-            height: '100vh'
+            height: '80vh'
         }
 
         const center = {
@@ -208,6 +204,7 @@ class MapDisplay extends Component {
                 initialCenter={center}
                 onClick={this.closeInfoWindow}>
             <InfoWindow
+                tabIndex="0"
                 marker={this.state.activeMarker}
                 visible={this.state.showingInfoWindow}
                 onClose={this.closeInfoWindow}>
@@ -240,4 +237,4 @@ class MapDisplay extends Component {
   }
 }
 
-export default GoogleApiWrapper({apiKey: MAP_KEY, LoadingContainer: ErrorAlert})(MapDisplay)
+export default GoogleApiWrapper({apiKey: MAP_KEY})(MapDisplay)
