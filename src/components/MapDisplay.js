@@ -3,7 +3,7 @@ import {Map, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
 import ErrorAlert from './ErrorAlert';
 //Tutorial source: https://www.youtube.com/watch?v=NVAVLCJwAAo&feature=youtu.be
 //declare map api as a constant with API keys
-const MAP_KEY = 'xyzAIzaSyBVMw1jhal8PJLsikGso7YOp-qqDHATDC4'; //use with GoogleApiWrapper component
+const MAP_KEY = 'AIzaSyBVMw1jhal8PJLsikGso7YOp-qqDHATDC4'; //use with GoogleApiWrapper component
 const FS_CLIENT = 'CXKH1EGY1G5CKFK1I2OTHS4GKIFMSRN3FLSLPH5QNBP3YWV3';
 const FS_SECRET = 'EEFMX2QAOHSKBC0MGMDIBHIYDUP4M50PVMXB1LDVD0XEPGGS';
 const FS_VERSION = "20181101";
