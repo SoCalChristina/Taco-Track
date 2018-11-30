@@ -69,3 +69,4 @@ All resources are referenced here and/or in the code.
 * Facebook Create React App
 (https://facebook.github.io/create-react-app/docs/getting-started)
 * [React documentation](https://reactjs.org/).
+* 12/01/2018 1 on 1 tutoring session with Sarah Cervantes
